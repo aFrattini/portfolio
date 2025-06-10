@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
-from src.routers.titanicRouter import router as TitanicRouter
+from routers.titanicRouter import router as TitanicRouter
 
 app = FastAPI()
 
