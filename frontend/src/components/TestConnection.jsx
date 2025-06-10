@@ -14,7 +14,7 @@ function TestConnection () {
     /* Test de conexión
     const handlerTestConnection = async () => {
         try{
-            const response = await fetch('http://127.0.0.1:8000/titanic/health')
+            const response = await fetch('https://antonellafrattiniporfolio.onrender.com//titanic/health')
             if (!response.ok) {
                 alert("La respuesta a fallado")
             }
@@ -37,7 +37,7 @@ function TestConnection () {
             model_ml
         }
         try{
-            const response = await fetch('http://127.0.0.1:8000/titanic/predict', {
+            const response = await fetch('https://antonellafrattiniporfolio.onrender.com/titanic/predict', {
                 method: 'POST',
                 headers: {
                    'Content-Type': 'application/json'
