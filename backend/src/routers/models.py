@@ -14,11 +14,15 @@ class Number(BaseModel):
 
 
 # Impotacion de modelos
+import os
 import joblib
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../ml_models"))
+
 mapped_models = {
-    "regresion": joblib.load("../ml_models/logistic_regression.joblib"),
-    "tree": joblib.load("../ml_models/decision_tree.joblib"),
-    "forest": joblib.load("../ml_models/random_forest.joblib"),   
-    "knn": joblib.load("../ml_models/knn.joblib")
+    "regresion": joblib.load(os.path.join(MODEL_DIR, "logistic_regression.joblib")),
+    "knn": joblib.load(os.path.join(MODEL_DIR, "knn.joblib")),
+    "arbol": joblib.load(os.path.join(MODEL_DIR, "decision_tree.joblib")),
+    "random_forest": joblib.load(os.path.join(MODEL_DIR, "random_forest.joblib"))
 }
