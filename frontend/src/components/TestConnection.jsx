@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './CSS/TestConnections.css';
 
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 function TestConnection () {
     const [pclass, setPclass] = useState(2)
@@ -9,109 +10,91 @@ function TestConnection () {
     const [parch, setParch] = useState(0)
     const [gender, setGender] = useState("female")
     const [model_ml, setModel] = useState("regresion")
-    const [resultado, setResultado] = useState(null);
-
-    /* Test de conexión
-    const handlerTestConnection = async () => {
-        try{
-            const response = await fetch('https://antonellafrattiniporfolio.onrender.com//titanic/health')
-            if (!response.ok) {
-                alert("La respuesta a fallado")
-            }
-
-            const result = await response.json()
-            alert(result.message)
-        } catch (e){
-            console.log(e)
-        }
-    }
-    */
+    const [resultado, setResultado] = useState(null)
 
     const handlerNumber = async () => {
         const prediccion = {
-            pclass,
-            age,
-            sib,
-            parch,
+            pclass: Number(pclass),
+            age: Number(age),
+            sib: Number(sib),
+            parch: Number(parch),
             gender,
             model_ml
         }
-        try{
-            const response = await fetch('https://antonellafrattiniporfolio.onrender.com/titanic/predict', {
+
+        try {
+            const response = await fetch(`${API_URL}/titanic/predict`, {
                 method: 'POST',
                 headers: {
-                   'Content-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(prediccion)
             })
 
-
             if (!response.ok) {
-                alert("La respuesta a fallado")
+                const text = await response.text()
+                throw new Error(`Error ${response.status}: ${text}`)
             }
 
-            const result = await response.json();
-            setResultado(result); // guardar el objeto completo
-
-        } catch (e){
-            console.log(e)
+            const result = await response.json()
+            setResultado(result)
+        } catch (e) {
+            console.error(e)
+            alert("La respuesta ha fallado: " + e.message)
         }
     }
-
-
 
     return (
         <div className="form-result-wrapper">
             <form className="form-container" onSubmit={(e) => e.preventDefault()}>
-            <div className="form-group">
-                <label>Clase:</label>
-                <select value={pclass} onChange={(e) => setPclass(e.target.value)}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                </select>
-            </div>
-            <div className="form-group">
-                <label>Edad:</label>
-                <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
-            </div>
-            <div className="form-group">
-                <label>Hermanos:</label>
-                <input type="number" value={sib} onChange={(e) => setSib(e.target.value)} />
-            </div>
-            <div className="form-group">
-                <label>Parientes/Hijos:</label>
-                <input type="number" value={parch} onChange={(e) => setParch(e.target.value)} />
-            </div>
-            <div className="form-group">
-                <label>Género:</label>
-                <select value={gender} onChange={(e) => setGender(e.target.value)}>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-                </select>
-            </div>
-            <div className="form-group">
-                <label>Modelo:</label>
-                <select value={model_ml} onChange={(e) => setModel(e.target.value)}>
-                <option value="regresion">Regresión</option>
-                <option value="tree">Árbol de decisiones</option>
-                <option value="forest">Bosques aleatorios</option>
-                <option value="knn">KNN</option>
-                </select>
-            </div>
-            <button className="form-button" onClick={handlerNumber}>Predecir</button>
+                <div className="form-group">
+                    <label>Clase:</label>
+                    <select value={pclass} onChange={(e) => setPclass(e.target.value)}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>Edad:</label>
+                    <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
+                </div>
+                <div className="form-group">
+                    <label>Hermanos:</label>
+                    <input type="number" value={sib} onChange={(e) => setSib(e.target.value)} />
+                </div>
+                <div className="form-group">
+                    <label>Parientes/Hijos:</label>
+                    <input type="number" value={parch} onChange={(e) => setParch(e.target.value)} />
+                </div>
+                <div className="form-group">
+                    <label>Género:</label>
+                    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>Modelo:</label>
+                    <select value={model_ml} onChange={(e) => setModel(e.target.value)}>
+                        <option value="regresion">Regresión</option>
+                        <option value="tree">Árbol de decisiones</option>
+                        <option value="forest">Bosques aleatorios</option>
+                        <option value="knn">KNN</option>
+                    </select>
+                </div>
+                <button className="form-button" onClick={handlerNumber}>Predecir</button>
             </form>
 
-        {resultado && (
-            <div className="prediction-result">
-                <h3>Resultado de la predicción:</h3>
-                <p>Probabilidad de no sobrevivir: <strong>{(resultado.probability_0 * 100).toFixed(2)}%</strong></p>
-                <p>Probabilidad de sobrevivir: <strong>{(resultado.probability_1 * 100).toFixed(2)}%</strong></p>
-            </div>
-        )}
+            {resultado && (
+                <div className="prediction-result">
+                    <h3>Resultado de la predicción:</h3>
+                    <p>Probabilidad de no sobrevivir: <strong>{(resultado.probability_0 * 100).toFixed(2)}%</strong></p>
+                    <p>Probabilidad de sobrevivir: <strong>{(resultado.probability_1 * 100).toFixed(2)}%</strong></p>
+                </div>
+            )}
         </div>
-      )
-      
+    )
 }
 
 export default TestConnection
