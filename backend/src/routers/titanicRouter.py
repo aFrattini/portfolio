@@ -1,9 +1,9 @@
 import json
 from fastapi import APIRouter
 
-from routers.models import ModelPredict, Number
-from routers.utils import data_to_predict
-from routers.models import mapped_models
+from src.routers.models import ModelPredict, Number
+from src.routers.utils import data_to_predict
+from src.routers.models import mapped_models
 
 router = APIRouter()
 
