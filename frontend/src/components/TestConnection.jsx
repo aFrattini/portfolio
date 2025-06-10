@@ -21,6 +21,7 @@ function TestConnection () {
             gender,
             model_ml
         }
+        console.log("BACKEND URL:", import.meta.env.VITE_BACKEND_URL);
 
         try {
             const response = await fetch(`${API_URL}/titanic/predict`, {
