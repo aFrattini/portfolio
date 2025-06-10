@@ -1,0 +1,115 @@
+/* src/components/Hero.css */
+.hero-section {
+
+    background-image: url('/home/anto/Work/Portfolio/AntonellaPortfolio/frontend/src/assets/hero-background.png');
+    background-position: center center;  /* centra la imagen */
+    background-size: cover;              /* cubre todo el contenedor */
+    background-repeat: no-repeat;        /* no repite la imagen */
+    
+    /* Mantén el margin-top/ padding-top si necesitas solaparlo con el header */
+    
+    padding: 6rem 2rem;  /* tu padding interno habitual */
+  }
+  
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  /* Móvil: columna */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  .hero-text {
+    flex: 1;
+  }
+  
+  .hero-title {
+    padding-top: 200px;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    text-align: left;
+  }
+  
+  .hero-title .highlight {
+    color: #2F748E;       /* tu nuevo color */
+    /* Opcional: ajusta la sombra para que combine */
+    text-shadow: 0 0 8px rgba(47, 116, 142, 0.7);
+  }
+  
+  .hero-subtitle {
+    font-family: 'Courier New', monospace;
+    font-size: 1.25rem;
+    color: #e0e0e0;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  
+  .hero-description {
+    color: #c0c0c0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1rem 0 2rem;
+    text-align: left;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  
+  .hero-buttons .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #2F748E, #3DA9A9);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(47, 116, 142, 0.5);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #3DA9A9, #2F748E);
+    box-shadow: 0 0 15px rgba(47, 116, 142, 0.7);
+    transform: scale(1.03);
+  }
+  
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #3DA9A9;
+    color: #3DA9A9;
+    backdrop-filter: blur(4px);
+  }
+  
+  .btn-outline:hover {
+    background: rgba(138, 215, 187, 0.079);
+    color: #ffffffc1;
+    border-color: #3DA9A9;
+    transform: scale(1.03);
+  }
+  
+  .hero-image {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+  }
+
+  

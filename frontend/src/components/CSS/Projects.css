@@ -1,0 +1,169 @@
+/* src/components/Projects.css */
+
+.projects-section {
+  background: linear-gradient(to bottom, black 0%, #327C98 100%);
+  padding: 6rem 2rem;
+  color: #fff;
+  position: relative;
+  overflow: visible;
+}
+
+.projects-section::after {
+  content: "";
+  position: absolute;
+  top: -130px;
+  left: 0;
+  width: 100%;
+  height: 420px;
+  background: url('/fondo1.png') no-repeat top center;
+  background-size: cover;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.highlight {
+  color: #00bfff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 2px solid #2f748e;
+  color: #3DA9A9;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: #2f748e;
+  color: white;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+  grid-auto-rows: 1fr;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #1f2a3a, #161b22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.1);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 191, 255, 0.4);
+}
+
+.card-icon {
+  height: 140px;
+  background: radial-gradient(circle at top left, #3DA9A9, #2F748E);
+  font-size: 2.75rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card-content {
+  padding: 1.25rem 1rem; /* restaura el espaciado interno */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #8bbccc;
+}
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: #c0c0c0;
+  line-height: 1.4;
+}
+
+
+
+.category-label {
+  background: linear-gradient(135deg, #2F748E, #3DA9A9);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+
+.project-year {
+  color: rgb(202, 202, 202);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+}
+
+.see-more-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.see-more-btn {
+  background-color: #3DA9A9;  
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.see-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+}

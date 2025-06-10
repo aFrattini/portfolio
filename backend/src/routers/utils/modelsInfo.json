@@ -1,0 +1,12 @@
+[
+    {
+        "model": "Regresion Logistica",
+        "description": "El modelo ha sido entrenado con informacion real de personas que viajaron en el Titanic",
+        "param": ["age","gender","sib", "pach"]
+    },
+    {
+        "model": "Alboles de decision",
+        "description": "El modelo ha sido entrenado con informacion real de personas que viajaron en el Titanic",
+        "param": ["age","gender","sib", "pach"]
+    }
+]

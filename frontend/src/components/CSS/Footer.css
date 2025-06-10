@@ -1,0 +1,50 @@
+
+/* src/components/Footer.css */
+.footer {
+  background: linear-gradient(to bottom, #327C98 0%, black 100%);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -120px; /* ajustá hasta que se vea bien */
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent 0%, #327C98 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+
+.footer-cta {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social a {
+  font-size: 1.9rem;
+  color: #cccccc;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #3DA9A9;
+}
+
+.footer-copy {
+  color: #8a8a8a;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,142 @@
+/* src/components/About.css */
+
+.about-section {
+  position: relative;
+  padding: 3rem 3rem;
+  background: linear-gradient(to bottom, black 0%, #327C98 100%);
+  overflow: visible;
+  z-index: 1;
+  
+}
+
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: -300px; /* empuja hacia abajo para que no tape contenido */
+  left: 0;
+  width: 100%;
+  height: 420px; /* Aumentá esto si querés verla más */
+  background: url('/fondo2.png') no-repeat bottom center;
+  background-size: cover; /* fill el ancho */
+  opacity: 0.3;  /* o 1 si querés total */
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+
+
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  color: #FFFFFF;                  /* Blanco para texto principal */
+  font-weight: 700;
+  text-align: center;
+  z-index: 1;
+}
+
+.section-title .highlight {
+  color: #59C5B8;                  /* Verde-agua secundario */
+  text-shadow: 0 0 8px rgba(89, 197, 184, 0.7);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 2.5rem;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-text-card {
+  background: #0F1F2D;             /* Navy oscuro para cartas */
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  color: #C0C0C0;                  /* Texto secundario */
+  line-height: 1.6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-text-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+.card-heading {
+  color: #59C5B8;                  /* Verde-agua secundario */
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #0F1F2D;             /* Navy oscuro */
+  border-radius: 1rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+  display: block;      /* asegúrate de que sea block-level para que margin auto funcione */
+  margin: 0 auto ; /* 1rem de separación abajo */
+  font-size: 2.2rem;
+  color: #59C5B8;                  /* Verde-agua */
+  background: rgba(89, 197, 184, 0.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+  
+}
+
+.service-title {
+  color: #FFFFFF;                  /* Blanco */
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.service-desc {
+  color: #C0C0C0;                  /* Gris claro */
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+/* Animación fade-in opcional */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -1,0 +1,41 @@
+.titanic-container {
+  padding: 3rem 4rem;
+  margin-top: 2rem;
+  color: #eaeaea;
+  background: linear-gradient(to bottom, black 0%, #327C98 100%);
+  
+  min-height: 100vh; /* Asegura que cubra toda la pantalla */
+}
+
+.titanic-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #FBDFC0;
+}
+
+.titanic-description {
+  font-size: 1.1rem;
+  color: #d0d0d0;
+  text-align: center;
+  padding: 0 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.titanic-container a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #3DA9A9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.titanic-container a:hover {
+  text-shadow: 0 0 12px rgba(251, 223, 192, 0.3); /* brillo más fuerte en hover */
+}

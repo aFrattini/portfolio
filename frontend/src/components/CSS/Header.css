@@ -1,0 +1,43 @@
+/* Header.css */
+
+/* src/components/CSS/Header.css */
+.header {
+  background-color: rgba(255, 255, 255, 0.066);  /* blanco semitransparente */
+  backdrop-filter: blur(8px);                /* desenfoque del fondo */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0.5rem 0;
+}
+
+.nav-container {
+  padding: 0 2rem; 
+  display: flex;
+  align-items: center;
+
+}
+
+.nav-container.no-logo {
+  justify-content: flex-end;
+}
+
+.nav-links {
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+
+  /* Espacio entre items más ajustado */
+  gap: 1.5rem;         /* antes era 2rem */
+}
+
+.nav-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;  /* un pelín más pequeño */
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #3DA9A9;;
+}
