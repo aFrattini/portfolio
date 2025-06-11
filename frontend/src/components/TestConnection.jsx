@@ -79,8 +79,8 @@ function TestConnection () {
                     <label>Modelo:</label>
                     <select value={model_ml} onChange={(e) => setModel(e.target.value)}>
                         <option value="regresion">Regresión</option>
-                        <option value="tree">Árbol de decisiones</option>
-                        <option value="forest">Bosques aleatorios</option>
+                        <option value="arbol">Árbol de decisiones</option>
+                        <option value="random_forest">Bosques aleatorios</option>
                         <option value="knn">KNN</option>
                     </select>
                 </div>
