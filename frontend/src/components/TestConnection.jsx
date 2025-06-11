@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './CSS/TestConnections.css';
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
+
+const resultRef = useRef(null);
 
 function TestConnection () {
     const [pclass, setPclass] = useState(2)
@@ -39,6 +41,12 @@ function TestConnection () {
 
             const result = await response.json()
             setResultado(result)
+
+                    // Hacer scroll al resultado
+            setTimeout(() => {
+            resultRef.current?.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
+
         } catch (e) {
             console.error(e)
             alert("La respuesta ha fallado: " + e.message)
@@ -88,7 +96,7 @@ function TestConnection () {
             </form>
 
             {resultado && (
-                <div className="prediction-result">
+                <div className="prediction-result" ref={resultRef}>
                     <h3>Resultado de la predicción:</h3>
                     <p>Probabilidad de no sobrevivir: <strong>{(resultado.probability_0 * 100).toFixed(2)}%</strong></p>
                     <p>Probabilidad de sobrevivir: <strong>{(resultado.probability_1 * 100).toFixed(2)}%</strong></p>
