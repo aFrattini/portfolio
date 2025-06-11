@@ -40,12 +40,12 @@ export default function Hero() {
           </p>
           
           <div className="hero-buttons">
-            <Link to="#projects" className="btn btn-primary">
+            <a href="#projects" className="btn btn-primary">
               Ver proyectos
-            </Link>
-            <Link to="#contact" className="btn btn-outline">
+            </a>
+            <a href="#contact"className="btn btn-outline">
               Contacto
-            </Link>
+            </a>
           </div>
         </div>
 
