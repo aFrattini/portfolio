@@ -20,4 +20,4 @@ app.add_middleware(
 
 
 # Registrar el router
-app.include_router(TitanicRouter.router)
+app.include_router(TitanicRouter)
