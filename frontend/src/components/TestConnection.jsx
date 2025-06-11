@@ -3,9 +3,10 @@ import './CSS/TestConnections.css';
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
-const resultRef = useRef(null);
 
 function TestConnection () {
+    const resultRef = useRef(null)
+    
     const [pclass, setPclass] = useState(2)
     const [age, setAge] = useState(20)
     const [sib, setSib] = useState(0)
