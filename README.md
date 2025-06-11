@@ -19,7 +19,6 @@ Además de ser una vitrina de mis trabajos en inteligencia artificial y Big Data
 - **Backend**: FastAPI, Python
 - **Machine Learning**: scikit-learn, joblib
 - **Infraestructura**: Render
-- **Otros**: Docker, Spark, Kafka, MongoDB (usados en proyectos individuales)
 
 ## 🚀 Funcionalidades destacadas
 
