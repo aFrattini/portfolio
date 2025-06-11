@@ -1,7 +1,7 @@
 /* src/components/Hero.css */
 .hero-section {
 
-    background-image: url('/home/anto/Work/Portfolio/AntonellaPortfolio/frontend/src/assets/hero-background.png');
+    background-image: url('/hero-background.png');
     background-position: center center;  /* centra la imagen */
     background-size: cover;              /* cubre todo el contenedor */
     background-repeat: no-repeat;        /* no repite la imagen */
