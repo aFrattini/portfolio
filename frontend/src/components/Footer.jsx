@@ -21,7 +21,9 @@ export default function Footer() {
           <FaEnvelope />
         </a>
       </div>
-
+      <p className="footer-made-with">
+        ✨ Hecho con React, café ☕ y unos cuantos consejos de ChatGPT 🤖
+      </p>
       <p className="footer-copy">© {year} Antonella Frattini</p>
     </footer>
   );
