@@ -7,7 +7,7 @@ const allProjects = [
     id: 1,
     title: 'Predicción de supervivencia',
     description: 'Modelo predictivo para forecast de supervivencia con regresión y árboles de decisión.',
-    year: 2023,
+    year: 2024,
     tags: ['Machine Learning', 'Python', 'Scikit-learn'],
     category: 'Machine Learning',
     icon: '🧠',
@@ -15,53 +15,13 @@ const allProjects = [
   },
   {
     id: 2,
-    title: 'Dashboard Financiero',
-    description: 'Dashboard interactivo para análisis financiero con KPIs y métricas clave.',
-    year: 2023,
-    tags: ['Power BI', 'DAX'],
-    category: 'Power BI',
-    icon: '📊',
-    link: '/proyectos/titanic'
-  },
-  {
-    id: 3,
     title: 'Segmentación de Clientes',
     description: 'Análisis de clustering para identificar segmentos de clientes y patrones de comportamiento.',
-    year: 2022,
+    year: 2024,
     tags: ['Machine Learning', 'Python', 'K-means'],
     category: 'Machine Learning',
     icon: '👥',
     link: '/proyectos/cluster-paises'
-  },
-  {
-    id: 4,
-    title: 'Clasificación de Imágenes',
-    description: 'CNN entrenada para clasificar imágenes en 5 categorías.',
-    year: 2022,
-    tags: ['Machine Learning', 'Python', 'CNN'],
-    category: 'Machine Learning',
-    icon: '🖼️',
-    link: '/proyectos/titanic'
-  },
-  {
-    id: 5,
-    title: 'Clasificación de Imágenes',
-    description: 'CNN entrenada para clasificar imágenes en 5 categorías.',
-    year: 2022,
-    tags: ['Machine Learning', 'Python', 'CNN'],
-    category: 'Machine Learning',
-    icon: '🖼️',
-    link: '/proyectos/titanic'
-  },
-  {
-    id: 6,
-    title: 'Clasificación de Imágenes',
-    description: 'CNN entrenada para clasificar imágenes en 5 categorías.',
-    year: 2022,
-    tags: ['Machine Learning', 'Python', 'CNN'],
-    category: 'Machine Learning',
-    icon: '🖼️',
-    link: '/proyectos/titanic'
   }
 ];
 
