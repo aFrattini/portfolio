@@ -17,3 +17,7 @@ app.add_middleware(
     allow_methods=["*"],              # Métodos HTTP permitidos
     allow_headers=["*"],              # Encabezados permitidos
 )
+
+
+# Registrar el router
+app.include_router(TitanicRouter.router)
