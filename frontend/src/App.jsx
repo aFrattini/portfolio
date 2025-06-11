@@ -22,7 +22,9 @@ function App() {
         {/* otros proyectos futuros */}
       </Routes>
       </div>
-      <Footer />
+      <section id="contact">
+        <Footer />
+      </section>
     </Router>
   );
 }

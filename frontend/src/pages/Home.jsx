@@ -3,7 +3,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Technologies from '../components/Technologies'
 import Projects from '../components/Projects'
-import Footer from '../components/Footer'
+
 
 function Home() {
   return (
@@ -18,9 +18,6 @@ function Home() {
         </section>
         <section id="projects">
           <Projects />
-        </section>
-        <section id="contact">
-          <Footer />
         </section>
       </main>
     </>
