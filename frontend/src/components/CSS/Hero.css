@@ -44,8 +44,13 @@
     .hero-buttons {
       justify-content: center;
     }
-  }
+
   
+    .hero-image {
+      display: none;
+    }
+  }
+
   .hero-text {
     flex: 1;
   }
