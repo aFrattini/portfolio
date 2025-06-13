@@ -17,6 +17,8 @@
 }
 
 .titanic-description {
+  max-width: 1200px;
+  margin: 0 auto;
   font-size: 1.1rem;
   color: #d0d0d0;
   text-align: center;
