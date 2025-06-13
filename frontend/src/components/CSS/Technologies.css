@@ -48,12 +48,17 @@
   .tech-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  h2.section-title {
+    margin-top: -100px;
+  }
 }
 
 @media (max-width: 600px) {
   .tech-grid {
     grid-template-columns: 1fr;
   }
+  
 }
 
 .tech-item {
