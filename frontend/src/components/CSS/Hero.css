@@ -27,10 +27,14 @@
       text-align: center;
     }
 
+    .hero-section {
+      padding: 2rem 1rem;
+    }
+
     .hero-title {
-      padding-top: 80px; /* o menos si querés que quede más pegado */
+      padding-top: 0;
       text-align: center;
-  }
+    }
 
     .hero-subtitle,
     .hero-description {
