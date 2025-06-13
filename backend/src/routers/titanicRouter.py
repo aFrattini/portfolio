@@ -7,9 +7,10 @@ from src.routers.models import mapped_models
 
 router = APIRouter()
 
-@router.get("/titanic/health")
-async def titanic_health():
-    return {"message": "OK"}
+
+@router.get("/ping")
+def ping():
+    return {"status": "ok"}
 
 
 @router.get("/titanic/info")
