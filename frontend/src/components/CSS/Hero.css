@@ -26,6 +26,20 @@
       flex-direction: column;
       text-align: center;
     }
+
+    .hero-title {
+      padding-top: 80px; /* o menos si querés que quede más pegado */
+      text-align: center;
+  }
+
+    .hero-subtitle,
+    .hero-description {
+      text-align: center;
+    }
+
+    .hero-buttons {
+      justify-content: center;
+    }
   }
   
   .hero-text {
