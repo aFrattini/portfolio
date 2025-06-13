@@ -64,7 +64,12 @@
   .about-section::after {
     bottom: -200px; 
   }
+
+  #about h2.section-title {
+    margin-top: -200px;
+  }
 }
+
 
 .about-text-card {
   background: #0F1F2D;            
