@@ -22,7 +22,17 @@ const allProjects = [
     category: 'Machine Learning',
     icon: '👥',
     link: '/proyectos/cluster-paises'
-  }
+  },
+  {
+  id: 3,
+  title: 'Dashboard Superstore',
+  description: 'Visualización interactiva de ventas, beneficio y clientes en Power BI.',
+  year: 2025,
+  tags: ['Power BI', 'DataViz', 'DAX'],
+  category: 'Power BI',
+  icon: '📊',
+  link: '/proyectos/superstore'
+}
 ];
 
 const categories = ['Todos', 'Machine Learning', 'Power BI'];

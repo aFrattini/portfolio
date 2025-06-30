@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Projects from './components/Projects'; 
 import TitanicProject from './pages/TitanicProject';
 import ClusterPaisesProject from './pages/ClusterPaisesProject';
+import SuperstoreProject from './pages/SuperstoreProject';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './CSS/App.css';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/proyectos" element={<Projects />} />
           <Route path="/proyectos/titanic" element={<TitanicProject />} />
           <Route path="/proyectos/cluster-paises" element={<ClusterPaisesProject />} />
+          <Route path="/proyectos/superstore" element={<SuperstoreProject />} />
         {/* otros proyectos futuros */}
       </Routes>
       </div>
