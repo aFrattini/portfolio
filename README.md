@@ -37,6 +37,6 @@ Además de ser una vitrina de mis trabajos en inteligencia artificial y Big Data
 ## 📬 Contacto
 
 📧 antonellafrattini@hotmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/antonellafrattini)  
+🌐 [LinkedIn](https://www.linkedin.com/in/antonella-frattini)  
 🖥️ [Portfolio online](https://antonellafrattiniporfolio.onrender.com)
 
