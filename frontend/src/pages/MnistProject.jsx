@@ -5,9 +5,9 @@ import '../CSS/MnistProject.css';
 
 export default function MnistProject() {
   const canvasRef = useRef(null);
+  const resultRef = useRef(null);
   const [prediction, setPrediction] = useState(null);
   const [confidence, setConfidence] = useState(null);
-
 
   const handlePredict = async () => {
     try {
@@ -33,18 +33,23 @@ export default function MnistProject() {
         }
         ctx.putImageData(imgData, 0, 0);
 
-        offCanvas.toBlob(async (blob) => {         
-  
+        offCanvas.toBlob(async (blob) => {
           const formData = new FormData();
           formData.append('file', blob, 'digit.png');
           const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/mnist/predict`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
+
           setPrediction(res.data.digit);
           if (res.data.probabilities) {
             const probs = res.data.probabilities[0];
             const maxProb = Math.max(...probs);
             setConfidence((maxProb * 100).toFixed(1));
+          }
+
+          // Desplazar al resultado
+          if (resultRef.current) {
+            resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         });
       };
@@ -85,11 +90,11 @@ export default function MnistProject() {
             strokeWidth={15}
             strokeColor="#FFFFFF"
             canvasColor="#000000"        
-            withTimestamp={true}          // Esto evita bugs de visualización
+            withTimestamp={true}
             style={{
               border: '2px solid #fff',
               borderRadius: '8px',
-              backgroundColor: '#000000', 
+              backgroundColor: '#000000',
             }}
             className="mnist-canvas"
           />
@@ -99,7 +104,7 @@ export default function MnistProject() {
           </div>
 
           {prediction !== null && (
-            <div className="mnist-prediction-box">
+            <div className="mnist-prediction-box" ref={resultRef}>
               <h3 className="mnist-pred-title">Resultado de la predicción:</h3>
               <div className="mnist-pred-flex">
                 <span className="mnist-pred-number-big">{prediction}</span>
