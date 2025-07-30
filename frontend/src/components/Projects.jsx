@@ -32,7 +32,17 @@ const allProjects = [
   category: 'Power BI',
   icon: '📊',
   link: '/proyectos/superstore'
-}
+},
+  {
+    id: 4,
+    title: 'Reconocimiento de Dígitos (MNIST)',
+    description: 'Sistema de inferencia en producción que reconoce números escritos a mano utilizando un modelo entrenado en TensorFlow.',
+    year: 2025,
+    tags: ['TensorFlow', 'IA', 'React', 'FastAPI'],
+    category: 'Machine Learning',
+    icon: '✍️',
+    link: '/proyectos/mnist'
+  }
 ];
 
 const categories = ['Todos', 'Machine Learning', 'Power BI'];
