@@ -5,9 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
+    allowedHosts: ['.onrender.com'], // ✅ Permitir Render
     proxy: {
       '/mnist': {
-        target: 'http://localhost:8000',
+        target: 'http://localhost:8000', // 🧪 Solo para dev local
         changeOrigin: true,
       },
     },
