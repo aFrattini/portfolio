@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import TitanicProject from './pages/TitanicProject';
 import ClusterPaisesProject from './pages/ClusterPaisesProject';
 import SuperstoreProject from './pages/SuperstoreProject';
+import MnistProject from './pages/MnistProject';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './CSS/App.css';
@@ -21,6 +22,8 @@ function App() {
           <Route path="/proyectos/titanic" element={<TitanicProject />} />
           <Route path="/proyectos/cluster-paises" element={<ClusterPaisesProject />} />
           <Route path="/proyectos/superstore" element={<SuperstoreProject />} />
+          <Route path="/proyectos/mnist" element={<MnistProject />} />
+
         {/* otros proyectos futuros */}
       </Routes>
       </div>

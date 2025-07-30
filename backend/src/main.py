@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
+from src.routers.mnistRouter import router as mnistRouter
 from src.routers.titanicRouter import router as TitanicRouter
 
 
@@ -21,3 +22,4 @@ app.add_middleware(
 
 # Registrar el router
 app.include_router(TitanicRouter)
+app.include_router(mnistRouter)
