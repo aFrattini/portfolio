@@ -72,7 +72,7 @@ export default function MnistProject() {
           Este proyecto demuestra la aplicación de <strong>Inteligencia Artificial</strong> para el reconocimiento de dígitos escritos a mano utilizando el famoso dataset MNIST. Puedes dibujar cualquier número del 0 al 9 y el sistema realizará una predicción, mostrando además el nivel de certeza del modelo para esa predicción.
           <br /><br />
           El modelo fue entrenado en Python con TensorFlow/Keras. Todo el proceso de entrenamiento y evaluación se encuentra 
-          <a className="project-link" href="https://github.com/TU_REPO/Notebook_MNIST" target="_blank" rel="noopener noreferrer"><br /> en este Jupyter Notebook disponible en mi GitHub </a>.
+          <a className="project-link" href="https://github.com/aFrattini/mnist-digit-recognition" target="_blank" rel="noopener noreferrer"><br /> en este Jupyter Notebook disponible en mi GitHub </a>.
         </div>
 
         <div className="mnist-demo-box">
