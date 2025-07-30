@@ -2,15 +2,16 @@
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(to bottom, black 0%, #327C98 100%);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
 .mnist-project-container {
   max-width: 1200px;
   margin: 0 auto;
   color: #eaeaea;
-  padding: 3rem 4rem 1rem 4rem;
+  padding: 2rem 1rem 1rem 1rem;
+  box-sizing: border-box;
 }
 
 .mnist-title {
@@ -179,6 +180,7 @@
   flex-direction: column;
   align-items: center;
   animation: fadeIn 0.6s;
+  text-align: center; /
 }
 
 .mnist-pred-title {
