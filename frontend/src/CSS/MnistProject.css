@@ -156,23 +156,15 @@
   box-shadow: 0 8px 16px rgba(0,0,0,0.14);
 }
 
-@media (max-width: 900px) {
-  .mnist-project-container {
-    padding: 2.2rem 0.6rem;
-  }
-  .mnist-demo-box {
-    padding: 1.2rem 0.7rem;
+@media (min-width: 900px) {
+  .mnist-canvas-zone {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-@media (max-width: 600px) {
-  .mnist-title {
-    font-size: 1.6rem;
-  }
-  .mnist-project-container {
-    padding: 1.4rem 0.2rem;
-  }
-}
 
 
 .mnist-prediction-box {
