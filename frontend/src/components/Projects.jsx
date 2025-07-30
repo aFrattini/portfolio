@@ -38,7 +38,7 @@ const allProjects = [
     title: 'Reconocimiento de Dígitos (MNIST)',
     description: 'Sistema de inferencia en producción que reconoce números escritos a mano utilizando un modelo entrenado en TensorFlow.',
     year: 2025,
-    tags: ['TensorFlow', 'IA', 'React', 'FastAPI'],
+    tags: ['Machine Learning', 'TensorFlow', 'IA', 'React', 'FastAPI'],
     category: 'Machine Learning',
     icon: '✍️',
     link: '/proyectos/mnist'
