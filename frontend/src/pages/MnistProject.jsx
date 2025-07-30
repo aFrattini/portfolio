@@ -37,7 +37,7 @@ export default function MnistProject() {
   
           const formData = new FormData();
           formData.append('file', blob, 'digit.png');
-          const res = await axios.post('/mnist/predict', formData, {
+          const res = await axios.post(`${import.meta.env.VITE_API_URL}/mnist/predict`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
           setPrediction(res.data.digit);
