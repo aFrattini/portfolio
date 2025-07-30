@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 from scipy import ndimage
 
-router = APIRouter(prefix="/mnist", tags=["MNIST"])
+router = APIRouter()
 model = load_model("mnist_models/mnist_model.h5")
 
 def preprocess_image(img):
@@ -27,7 +27,7 @@ def preprocess_image(img):
     img_array = img_array.reshape(1, 28, 28)
     return img_array
 
-@router.post("/predict")
+@router.post("/mnist/predict")
 async def predict_digit(file: UploadFile = File(...)):
     img = Image.open(file.file)
     img_array = preprocess_image(img)
