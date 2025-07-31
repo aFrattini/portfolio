@@ -5,7 +5,7 @@ import '../CSS/MnistProject.css';
 
 export default function MnistProject() {
   const canvasRef = useRef(null);
-  const resultRef = useRef(null);
+  const predictionRef = useRef(null); // 👉 ref para hacer scroll
   const [prediction, setPrediction] = useState(null);
   const [confidence, setConfidence] = useState(null);
 
@@ -36,6 +36,7 @@ export default function MnistProject() {
         offCanvas.toBlob(async (blob) => {
           const formData = new FormData();
           formData.append('file', blob, 'digit.png');
+
           const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/mnist/predict`, formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
@@ -47,10 +48,10 @@ export default function MnistProject() {
             setConfidence((maxProb * 100).toFixed(1));
           }
 
-          // Desplazar al resultado
-          if (resultRef.current) {
-            resultRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          // 👉 Hacer scroll hacia el resultado una vez renderizado
+          setTimeout(() => {
+            predictionRef.current?.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
         });
       };
     } catch (err) {
@@ -72,7 +73,7 @@ export default function MnistProject() {
           Este proyecto demuestra la aplicación de <strong>Inteligencia Artificial</strong> para el reconocimiento de dígitos escritos a mano utilizando el famoso dataset MNIST. Puedes dibujar cualquier número del 0 al 9 y el sistema realizará una predicción, mostrando además el nivel de certeza del modelo para esa predicción.
           <br /><br />
           El modelo fue entrenado en Python con TensorFlow/Keras. Todo el proceso de entrenamiento y evaluación se encuentra 
-          <a className="project-link" href="https://github.com/aFrattini/mnist-digit-recognition" target="_blank" rel="noopener noreferrer"><br /> en este Jupyter Notebook disponible en mi GitHub </a>.
+          <a className="project-link" href="https://github.com/TU_REPO/Notebook_MNIST" target="_blank" rel="noopener noreferrer"><br /> en este Jupyter Notebook disponible en mi GitHub </a>.
         </div>
 
         <div className="mnist-demo-box">
@@ -94,7 +95,7 @@ export default function MnistProject() {
             style={{
               border: '2px solid #fff',
               borderRadius: '8px',
-              backgroundColor: '#000000',
+              backgroundColor: '#000000', 
             }}
             className="mnist-canvas"
           />
@@ -104,7 +105,7 @@ export default function MnistProject() {
           </div>
 
           {prediction !== null && (
-            <div className="mnist-prediction-box" ref={resultRef}>
+            <div className="mnist-prediction-box" ref={predictionRef}>
               <h3 className="mnist-pred-title">Resultado de la predicción:</h3>
               <div className="mnist-pred-flex">
                 <span className="mnist-pred-number-big">{prediction}</span>
