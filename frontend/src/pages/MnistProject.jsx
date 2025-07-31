@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 import axios from 'axios';
 import '../CSS/MnistProject.css';
@@ -6,9 +6,10 @@ import '../CSS/MnistProject.css';
 export default function MnistProject() {
   const canvasRef = useRef(null);
   const resultRef = useRef(null);
+
   const [prediction, setPrediction] = useState(null);
   const [confidence, setConfidence] = useState(null);
-  const [hasScrolled, setHasScrolled] = useState(false); // NUEVO
+  const [shouldScroll, setShouldScroll] = useState(false); 
 
   const handlePredict = async () => {
     try {
@@ -48,13 +49,7 @@ export default function MnistProject() {
             setConfidence((maxProb * 100).toFixed(1));
           }
 
-          // Solo hacer scroll la primera vez
-          if (!hasScrolled && resultRef.current) {
-            setTimeout(() => {
-              resultRef.current.scrollIntoView({ behavior: 'smooth' });
-              setHasScrolled(true);
-            }, 100);
-          }
+          setShouldScroll(true); 
         });
       };
     } catch (err) {
@@ -62,11 +57,19 @@ export default function MnistProject() {
     }
   };
 
+  
+  useEffect(() => {
+    if (shouldScroll && resultRef.current) {
+      resultRef.current.scrollIntoView({ behavior: 'smooth' });
+      setShouldScroll(false); // solo una vez
+    }
+  }, [shouldScroll, prediction]);
+
   const clearCanvas = async () => {
     await canvasRef.current.clearCanvas();
     setPrediction(null);
     setConfidence(null);
-    setHasScrolled(false); // Reinicia scroll si se limpia
+    setShouldScroll(false);
   };
 
   return (
@@ -94,7 +97,7 @@ export default function MnistProject() {
             height="280px"
             strokeWidth={15}
             strokeColor="#FFFFFF"
-            canvasColor="#000000"        
+            canvasColor="#000000"
             withTimestamp={true}
             style={{
               border: '2px solid #fff',
